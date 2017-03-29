@@ -7,7 +7,11 @@ import Base: copy, copy!, ==
 export DSFMT_state, dsfmt_get_min_array_size, dsfmt_get_idstring,
        dsfmt_init_gen_rand, dsfmt_init_by_array, dsfmt_gv_init_by_array,
        dsfmt_fill_array_close_open!, dsfmt_fill_array_close1_open2!,
-       win32_SystemFunction036!
+
+@static if is_windows()
+    export win32_SystemFunction036!
+end
+
 
 "Mersenne Exponent"
 const MEXP = 19937
